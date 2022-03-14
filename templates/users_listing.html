@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}Users Listing{% endblock %} {%block
+content %}
+<h2>Users</h2>
+<ul>
+  {% for user in users %}
+  <li>
+    <a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
+  </li>
+  {% endfor %}
+</ul>
+<a
+  href="/users/new"
+  class="btn btn-primary btn-lg active"
+  role="button"
+  aria-pressed="true"
+  >Add User</a
+>
+{% endblock %}
