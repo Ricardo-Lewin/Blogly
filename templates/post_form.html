@@ -20,6 +20,22 @@ content %}
       placeholder="What's on your mind?"
     />
   </div>
+  <div class="form-check">
+    {% for tag in tags %}
+    <div>
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value="{{ tag.id }}"
+        id="tag_{{ tag.id }}"
+        name="tags"
+      />
+      <label class="form-check-label" for="tag_{{ tag.id }}">
+        {{ tag.name }}
+      </label>
+    </div>
+    {% endfor %}
+  </div>
   <a
     href="/users/{{user.id}}"
     class="btn btn-outline-success"
